@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html ng-app="home">
+<head>
+    <title>Sean Clark</title>
+    <script data-require="angular.js@*" data-semver="1.4.6" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+    <link rel="stylesheet" href="styles/MainStyles.css" />
+    <script src="scripts/Home.js"></script>
+    <script src="scripts/HomeController.js"></script>
+    <meta charset="utf-8">
+</head>
+<body class="background">
+    <div id="Controller" ng-controller="HomeController">
+        <div class="container" ng-controller="HomeController">
+            <p>
+                Hey there and welcome to the place where I try to convince you to hire me!
+            </p>
+            <p>
+                My name is Sean Clark and I am a software developer currently located on the Forest City of London, Ontario, Canada. I've lived in London my entire life and am currently engaged to marry my best friend, Sara DiMarco, on November 04, 2017. We have 3 furbabies together: our dog, Freya, and two cats, Mokie and Charity.
+            </p>
+            <p>
+                Have a look around and if something tickles your fancy, fill out the contact form and let me know!
+            </p>
+        </div>
+        <p />
+        <div id="Main" class="container">
+            <div id="Experience" class="column">
+                <h2>Experience</h2>
+            </div>
+            <div id="Skills" class="column">
+                <h2>Skills</h2>
+            </div>
+            <div id="Education" class="column">
+                <h2>Education</h2>
+            </div>
+        </div>
+        <p />
+        <div id="Miscellaneous" class="horizontal-container">
+            <div id="Portfolio" class="row">
+                <h2>Portfolio</h2>
+                <div id="GitHub">
+                    <a ng-href="{{user.html_url}}"><img src="images/GitHub-Mark-32px.png" alt="GitHub" class="GitHubImage" /></a>
+                    <ul class="borderless-horizontal-list" ng-repeat="repo in repos">
+                        <li>
+                            Repo: <a ng-href="{{repo.url}}">{{repo.name}}</a> - {{repo.description}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="Hobbies" class="row">
+                <h2>Hobbies</h2>
+                <ul class="borderless-horizontal-list">
+                    <li class="row">Running - 2:04:11 Half-Marathon PB</li>
+                    <li class="row">Hockey (<a href="http://goo.gl/Y7vS3q">BSHL</a>)</li>
+                    <li class="row">Gaming</li>
+                </ul>
+            </div>
+        </div>
+        <div id="Footer" class="borderless-horizontal-container">
+            <footer class="footer">
+                <p>Copyright 2015 Sean Clark</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
