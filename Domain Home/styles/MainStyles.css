@@ -18,6 +18,16 @@
     padding: 3px 3px 3px 3px;
 }
 
+.borderless-max-container{
+    margin:auto;    
+
+    background-color:whitesmoke;
+    color:black;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .horizontal-container{    
     margin:auto;
     width:75%;    
@@ -50,9 +60,14 @@
     flex-flow:column wrap;
 }
 
-.column{    
+.third-column{    
     text-align:center;
     width:33.3%;
+}
+
+.half-column{
+    text-align:center;
+    width:50%;
 }
 
 .left-column{
@@ -71,10 +86,9 @@
     display:none;
 }
 
-div.left-column:hover{
-    display:initial;    
+ul.bulletless{
+    list-style-type:none;
 }
-
 
 .footer{
     font-size:small;
