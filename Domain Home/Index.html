@@ -38,12 +38,14 @@
             <div id="Portfolio" class="row">
                 <h2>Portfolio</h2>
                 <div id="GitHub">
-                    <a ng-href="{{user.html_url}}"><img src="images/GitHub-Mark-32px.png" alt="GitHub" class="GitHubImage" /></a>
-                    <ul class="borderless-horizontal-list" ng-repeat="repo in repos">
-                        <li>
-                            Repo: <a ng-href="{{repo.url}}">{{repo.name}}</a> - {{repo.description}}
-                        </li>
-                    </ul>
+                    <a ng-href="{{user.html_url}}" class="float-container"><img src="images/GitHub-Mark-32px.png" alt="GitHub" class="GitHubImage" /></a>
+                    <div id="GitHubDetails" class="float-container">
+                        <ul class="borderless-horizontal-list" ng-repeat="repo in repos | limitTo:5 | orderBy:+stargazers_count">
+                            <li>
+                                Repo: <a ng-href="{{repo.url}}">{{repo.name}}</a> - {{repo.description}}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div id="Hobbies" class="row">
