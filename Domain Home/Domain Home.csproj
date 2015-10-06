@@ -66,8 +66,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\GitHub-Mark-32px.png" />
     <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="styles\bootstrap-theme.css.map" />
+    <Content Include="styles\bootstrap.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -77,8 +84,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.html" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\Home.js" />
     <Content Include="scripts\HomeController.js" />
+    <Content Include="scripts\npm.js" />
+    <Content Include="styles\bootstrap-theme.css" />
+    <Content Include="styles\bootstrap-theme.min.css" />
+    <Content Include="styles\bootstrap.css" />
+    <Content Include="styles\bootstrap.min.css" />
     <Content Include="styles\MainStyles.css" />
     <Content Include="Web.config" />
   </ItemGroup>

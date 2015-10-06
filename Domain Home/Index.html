@@ -2,15 +2,15 @@
 <html ng-app="home">
 <head>
     <title>Sean Clark</title>
-    <script data-require="angular.js@*" data-semver="1.4.6" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
-    <link rel="stylesheet" href="styles/MainStyles.css" />
+    <script data-require="angular.js@*" data-semver="1.4.6" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>    
+    <link href="styles/bootstrap.min.css" rel="stylesheet" />
     <script src="scripts/Home.js"></script>
     <script src="scripts/HomeController.js"></script>
     <meta charset="utf-8">
 </head>
-<body class="background">
+<body>
     <div id="Controller" ng-controller="HomeController">
-        <div class="container" ng-controller="HomeController">
+        <div ng-controller="HomeController">
             <p>
                 Hey there and welcome to the place where I try to convince you to hire me!
             </p>
@@ -22,15 +22,15 @@
             </p>
         </div>
         <p />
-        <div id="Main" class="container">
-            <div id="Experience" class="third-column">
+        <div id="Main">
+            <div id="Experience">
                 <h2>Experience</h2>
             </div>
-            <div id="Skills" class="third-column">
+            <div id="Skills">
                 <h2>Skills</h2>
-                <div id="SkillsGroup" class="borderless-max-container">
-                    <div id="SkillsLeft" class="half-column">
-                        <ul class="bulletless">
+                <div id="SkillsGroup">
+                    <div id="SkillsLeft">
+                        <ul>
                             <li>C#</li>
                             <li>T-SQL</li>
                             <li>ASP.NET</li>  
@@ -42,8 +42,8 @@
                             <li>ColdFusion</li>
                         </ul>
                     </div>
-                    <div id="SkillsRight" class="half-column">
-                        <ul class="bulletless">
+                    <div id="SkillsRight">
+                        <ul>
                             <li>Visual Studio</li>
                             <li>TFS Administration</li>                            
                             <li>VS Release Management</li>
@@ -53,18 +53,18 @@
                     </div>
                 </div>
             </div>
-            <div id="Education" class="third-column">
+            <div id="Education">
                 <h2>Education</h2>
             </div>
         </div>
         <p />
-        <div id="Miscellaneous" class="horizontal-container">
-            <div id="Portfolio" class="row">
+        <div id="Miscellaneous">
+            <div id="Portfolio">
                 <h2>Portfolio</h2>
                 <div id="GitHub">
-                    <a ng-href="{{user.html_url}}" class="float-container"><img src="images/GitHub-Mark-32px.png" alt="GitHub" class="GitHubImage" /></a>
-                    <div id="GitHubDetails" class="float-container">
-                        <ul class="borderless-horizontal-list" ng-repeat="repo in repos | limitTo:5 | orderBy:+stargazers_count">
+                    <a ng-href="{{user.html_url}}"><img src="images/GitHub-Mark-32px.png" alt="GitHub" /></a>
+                    <div id="GitHubDetails" >
+                        <ul ng-repeat="repo in repos | limitTo:5 | orderBy:+stargazers_count">
                             <li>
                                 Repo: <a ng-href="{{repo.url}}">{{repo.name}}</a> - {{repo.description}}
                             </li>
@@ -72,20 +72,22 @@
                     </div>
                 </div>
             </div>
-            <div id="Hobbies" class="row">
+            <div id="Hobbies">
                 <h2>Hobbies</h2>
-                <ul class="borderless-horizontal-list">
-                    <li class="row">Running - 2:04:11 Half-Marathon PB</li>
-                    <li class="row">Hockey (<a href="http://goo.gl/Y7vS3q">BSHL</a>)</li>
-                    <li class="row">Gaming</li>
+                <ul>
+                    <li>Running - 2:04:11 Half-Marathon PB</li>
+                    <li>Hockey (<a href="http://goo.gl/Y7vS3q">BSHL</a>)</li>
+                    <li>Gaming</li>
                 </ul>
             </div>
         </div>
-        <div id="Footer" class="borderless-horizontal-container">
-            <footer class="footer">
+        <div id="Footer">
+            <footer>
                 <p>Copyright 2015 Sean Clark</p>
             </footer>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
 </body>
 </html>
