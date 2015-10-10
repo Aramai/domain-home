@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body data-spy="scroll" data-target="#Scrollspy">
-    <nav class="navbar navbar-default navbar-fixed-top">
+<body data-spy="scroll" data-target=".navspy" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapse" data-toggler="collapse" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapse" data-toggle="collapse" aria-expanded="false">
                     <span class="sr-only">Test</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -23,16 +23,18 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid>"
         <div id="main" class="row-fluid">
-            <div id="ScrollSpy" class="col-md-1 hidden-xs ">
-                <ul id="navigation" class="nav nav-pills nav-stacked affix">
-                    <li><a href="#Experience">Experience</a></li>
-                    <li><a href="#Skills">Skills</a></li>
-                    <li><a href="#Education">Education</a></li>
-                    <li><a href="#Portfolio">Portfolio</a></li>
-                    <li><a href="#Hobbies">Hobbies</a></li>
-                </ul>
+            <div class="col-md-1 hidden-xs ">
+                <nav id="ScrollSpy" > <!--Add class="navspy" to enable navspy control at later date-->
+                    <ul id="navigation" class="nav nav-pills nav-stacked affix">
+                        <li><a href="#Experience">Experience</a></li>
+                        <li><a href="#Skills">Skills</a></li>
+                        <li><a href="#Education">Education</a></li>
+                        <li><a href="#Portfolio">Portfolio</a></li>
+                        <li><a href="#Hobbies">Hobbies</a></li>
+                    </ul>
+                </nav>
             </div>
             <div id="Controller" ng-controller="HomeController" class="col-md-8">
                 <div id="Introduction">
@@ -101,6 +103,11 @@
                     </div>
                     <div id="Education">
                         <h2>Education</h2>
+                        <dl>
+                            <dt>University of Western Ontario</dt>
+                            <dd><i>2003-2008</i></dd>
+                            <dd>Honours B. Sc. in Computer Science, Software Engineering Specialization</dd>
+                        </dl>
                     </div>
                 </div>
                 <p />
