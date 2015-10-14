@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body data-spy="scroll" data-target=".navspy" data-offset="60">
+<body data-spy="scroll" data-target=".navspy" data-offset="60" ng-controller="HomeController">
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -25,7 +25,7 @@
     </nav>
     <div class="container-fluid>"
         <div id="main" class="row-fluid">
-            <div class="col-md-1 hidden-xs ">
+            <div class="col-md-1 col-sm-1 hidden-xs">
                 <nav id="ScrollSpy" > <!--Add class="navspy" to enable navspy control at later date-->
                     <ul id="navigation" class="nav nav-pills nav-stacked affix">
                         <li><a href="#Experience">Experience</a></li>
@@ -33,10 +33,47 @@
                         <li><a href="#Education">Education</a></li>
                         <li><a href="#Portfolio">Portfolio</a></li>
                         <li><a href="#Hobbies">Hobbies</a></li>
+                        <li><a href="" class="glyphicon-envelope text-center" data-toggle="modal" data-target="#Contact"></a></li>
                     </ul>
                 </nav>
+                <div id="Contact" class="modal fade" role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form id="ContactForm" name="ContactForm" class="form-horizontal" ng-submit="sendMail('#Contact')">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Contact Sean</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input id="ContactName" type="text" required ng-model="contact.name" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">E-mail</label>
+                                        <div class="col-sm-10">
+                                            <input id="ContactEmail" type="email" required ng-model="contact.email" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Message</label>
+                                        <div class="col-sm-10">
+                                            <textarea id="ContactMessage" rows="10" required ng-model="contact.message" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="submit" class="btn btn-default" value="Send"/>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="Controller" ng-controller="HomeController" class="col-md-8">
+            <div id="Controller" class="col-md-8 col-sm-8">
                 <div id="Introduction">
                     <p>
                         Hey there and welcome to the place where I try to convince you to hire me!
@@ -60,12 +97,15 @@
                                     <dd><i>2008 - Present</i></dd>
                                     <dd>
                                         <ul>
-                                            <li>Programmer stuff</li>
-                                            <li>More programmer stuff</li>
-                                            <li>TFS Administration</li>
-                                            <li>Continuous Integration</li>
                                             <li>Lead developer on many small and medium sized projects</li>
-                                            <li>Mentor for student co-op developers</li>
+                                            <li>Design, develop, debug and document server-side applications and client-facing web sites</li>
+                                            <li>Designed and implemented automated build solution using Team Foundation Server 2013, including development of custom activity library to support ALM</li>
+                                            <li>Integrated internal NuGet repository for dependency management into automated build solution, including automated creation and push of packages and package restore</li>
+                                            <li>Created standardized WiX installer template with customized UI and custom action library for validation</li>
+                                            <li>Interface with project managers, business analysts and front-line support to help define technical requirements and provide project estimates</li>
+                                            <li>Provide post-implementation and early life cycle support and documentation</li>
+                                            <li>Perform tier 1 production support as needed</li>
+                                            <li>Trainer and mentor for student co-op programmers</li>
                                         </ul>
                                     </dd>
                                 </dl>
@@ -80,6 +120,7 @@
                                 <ul>
                                     <li>C#</li>
                                     <li>T-SQL</li>
+                                    <li>SSIS</li>
                                     <li>ASP.NET</li>
                                     <li>MVC</li>
                                     <li>JavaScript</li>
@@ -115,12 +156,12 @@
                     <div id="Portfolio" class="row-fluid">
                         <h2>Portfolio</h2>
                         <div id="GitHub" class="col-xs-1">
-                            <a ng-href="{{user.html_url}}"><img src="img/GitHub-Mark-32px.png" alt="GitHub" /></a>
+                            <a ng-href="{{user.html_url}}"><img src="img/GitHub-Mark-Light-32px.png" alt="GitHub" /></a>
                         </div>
                         <div id="GitHubDetails" class="col-md-11">
                             <ul ng-repeat="repo in repos | limitTo:5 | orderBy:+stargazers_count">
                                 <li>
-                                    <a ng-href="{{repo.url}}">{{repo.name}}</a> - {{repo.description}}
+                                    <a ng-href="{{repo.html_url}}">{{repo.name}}</a> - {{repo.description}}
                                 </li>
                             </ul>
                         </div>
@@ -135,7 +176,8 @@
                     </div>
                 </div>
             </div>
-            <div id="padding" class="col-md-3"></div>
+            <div id="padding" class="col-md-3 col-sm-3">
+            </div>
         </div>
         <div class="col-md-12">
             <footer>
