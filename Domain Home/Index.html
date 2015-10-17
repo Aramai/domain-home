@@ -25,7 +25,7 @@
     </nav>
     <div class="container-fluid>"
         <div id="main" class="row-fluid">
-            <div class="col-md-1 col-sm-1 hidden-xs">
+            <div class="col-md-1 hidden-xs">
                 <nav id="ScrollSpy" > <!--Add class="navspy" to enable navspy control at later date-->
                     <ul id="navigation" class="nav nav-pills nav-stacked affix">
                         <li><a href="#Experience">Experience</a></li>
@@ -116,7 +116,7 @@
                     <div id="Skills" class="col-md-12">
                         <h2>Skills</h2>
                         <div id="SkillsGroup" class="row-fluid">
-                            <div id="SkillsLeft" class="col-md-3">
+                            <div id="SkillsLeft" class="col-xs-5 col-md-3">
                                 <ul>
                                     <li>C#</li>
                                     <li>T-SQL</li>
@@ -129,8 +129,8 @@
                                     <li>AngularJS</li>
                                     <li>ColdFusion</li>
                                 </ul>
-                            </div>
-                            <div id="SkillsRight" class="col-md-9">
+                            </div>                            
+                            <div id="SkillsRight" class="col-xs-7 col-md-9">
                                 <ul>
                                     <li>Visual Studio</li>
                                     <li>SQL Server Management Studio</li>
@@ -142,7 +142,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Education">
+                    <div id="Education" class="col-md-12">
                         <h2>Education</h2>
                         <dl>
                             <dt>University of Western Ontario</dt>
@@ -155,10 +155,10 @@
                 <div id="Miscellaneous" class="col-md-12">
                     <div id="Portfolio" class="row-fluid">
                         <h2>Portfolio</h2>
-                        <div id="GitHub" class="col-xs-1">
+                        <div id="GitHub" class="col-sm-1 hidden-xs">
                             <a ng-href="{{user.html_url}}"><img src="img/GitHub-Mark-Light-32px.png" alt="GitHub" /></a>
                         </div>
-                        <div id="GitHubDetails" class="col-md-11">
+                        <div id="GitHubDetails" class="col-sm-pull-11">
                             <ul ng-repeat="repo in repos | limitTo:5 | orderBy:+stargazers_count">
                                 <li>
                                     <a ng-href="{{repo.html_url}}">{{repo.name}}</a> - {{repo.description}}
@@ -176,7 +176,7 @@
                     </div>
                 </div>
             </div>
-            <div id="padding" class="col-md-3 col-sm-3">
+            <div id="padding" class="col-md-3">
             </div>
         </div>
         <div class="col-md-12">
