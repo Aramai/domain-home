@@ -21,9 +21,15 @@
         $http.get("https://api.github.com/users/Aramai")
                 .then(onUserComplete, onError);
 
-        $scope.sendMail = function (form) {
-            alert("Sending mail!");
-            //need to implement back-end web service to use SES to send e-mail to admin      
+        $scope.sendMail = function (form) {            
+            //need to implement back-end web service to use SES to send e-mail to admin            
+
+            $http.post("./Services/SendMail.asmx/Send")
+                 .then(function (response) {
+                     console.log(response);
+                 }, function (response) { console.log(response); });
+
+
             $(form).modal('hide');
         };       
     };
