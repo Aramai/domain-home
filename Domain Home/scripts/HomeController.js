@@ -2,7 +2,10 @@
 
     var app = angular.module("home", []);
 
-    var HomeController = function ($scope, $http) {      
+    var HomeController = function ($scope, $http, $interval) {      
+        
+        $scope.lastEmailSent = undefined;
+        $scope.contact = {};
 
         var onUserComplete = function (response) {
             $scope.user = response.data;
@@ -21,14 +24,30 @@
         $http.get("https://api.github.com/users/Aramai")
                 .then(onUserComplete, onError);
 
-        $scope.sendMail = function (form) {            
-            //need to implement back-end web service to use SES to send e-mail to admin            
+        $scope.sendMail = function (form) {                         
+            
+            var now = new Date();
 
-            $http.post("./Services/SendMail.asmx/Send")
-                 .then(function (response) {
-                     console.log(response);
-                 }, function (response) { console.log(response); });
+            if ($scope.lastEmailSent == undefined || ($scope.lastEmailSent != undefined && (now - $scope.lastEmailSent) >= 10000)) {
 
+                var data = $.param({
+                    name: $scope.contact.name,
+                    replyTo: $scope.contact.email,
+                    messageBody: $scope.contact.message
+                });
+
+                $http({
+                    url: "./Services/SendMail.asmx/Send",
+                    method: "POST",
+                    data: data,
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                }).then(function (response) {
+                    console.log(response);
+                }, function (response) { console.log(response); });
+
+
+                $scope.lastEmailSent = new Date();
+            }
 
             $(form).modal('hide');
         };       
