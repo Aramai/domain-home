@@ -3,3 +3,18 @@
     margin-top:70px;
 }
 
+li.folder:before{
+    list-style-type:none;
+    content: "\e118";
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -17px;
+    color: #CCCCCC;
+}
+
+a.contact {
+    vertical-align:middle;
+}
+
